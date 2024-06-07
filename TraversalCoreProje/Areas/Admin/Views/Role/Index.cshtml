@@ -17,15 +17,16 @@
 			<th>Rolü Sil</th>
 			<th>Rolü Güncelle</th>
 		</tr>
-
+		
 		@foreach (var item in Model)
 		{
 			count++;
 			<tr>
 				<td>@count</td>
 				<td>@item.Name</td>
-				<td><a href="#" class="btn btn-outline-danger">Rolü Sil</a></td>
-				<td><a href="#" class="btn btn-outline-success">Rolü Güncelle</a></td>
+				<td><a href="/Admin/Role/DeleteRole/@item.Id" class="btn btn-outline-danger" 
+					onclick="return confirm('Bu rolü silmek istediğinizden emin misiniz?')">Rolü Sil</a></td>
+				<td><a href="/Admin/Role/UpdateRole/@item.Id" class="btn btn-outline-success">Rolü Güncelle</a></td>
 			</tr>
 		}
 	</table>
