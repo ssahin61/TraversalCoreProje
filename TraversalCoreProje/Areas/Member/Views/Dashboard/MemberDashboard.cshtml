@@ -1,4 +1,6 @@
-﻿@{
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+
+@{
 	ViewData["Title"] = "MemberDashboard";
 	Layout = null;
 }
@@ -57,31 +59,31 @@
 					<a href="/Member/Dashboard/MemberDashboard"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
 				</li>
 				<li class=" nav-item">
-					<a href="/Member/Profile/Index"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Profilim</span></a>
+					<a href="/Member/Profile/Index"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">@localizer["Profilim"]</span></a>
 				</li>
 				<li class=" nav-item">
-					<a href="/Member/Reservation/MyCurrentReservation"><i class="ft-droplet"></i><span class="menu-title" data-i18n="">Aktif Rez.</span></a>
+					<a href="/Member/Reservation/MyCurrentReservation"><i class="ft-droplet"></i><span class="menu-title" data-i18n="">@localizer["Aktif Rez."]</span></a>
 				</li>
 				<li class=" nav-item">
-					<a href="/Member/Reservation/MyOldReservation"><i class="ft-clock"></i><span class="menu-title" data-i18n="">Geçmiş Rez.</span></a>
+					<a href="/Member/Reservation/MyOldReservation"><i class="ft-layers"></i><span class="menu-title" data-i18n="">@localizer["Geçmiş Rez."]</span></a>
 				</li>
-				<li class="active">
-					<a href="/Member/Reservation/MyApprovalReservation"><i class="ft-cloud"></i><span class="menu-title" data-i18n="">Bekleyen Rez.</span></a>
-				</li>
-				<li class=" nav-item">
-					<a href="/Member/Reservation/NewReservation"><i class="ft-navigation"></i><span class="menu-title" data-i18n="">Yeni Rezervasyon</span></a>
+				<li class="	nav-item">
+					<a href="/Member/Reservation/MyApprovalReservation"><i class="ft-box"></i><span class="menu-title" data-i18n="">@localizer["Bekleyen Rez."]</span></a>
 				</li>
 				<li class=" nav-item">
-					<a href="/Member/Destination/Index"><i class="ft-map"></i><span class="menu-title" data-i18n="">Tur Rotaları</span></a>
+					<a href="/Member/Reservation/NewReservation"><i class="ft-bold"></i><span class="menu-title" data-i18n="">@localizer["Yeni Rezervasyon"]</span></a>
 				</li>
 				<li class=" nav-item">
-					<a href="/Member/Comment/Index"><i class="ft-command"></i><span class="menu-title" data-i18n="">Yorumlarım</span></a>
+					<a href="/Member/Destination/Index"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">@localizer["Tur Rotaları"]</span></a>
 				</li>
 				<li class=" nav-item">
-					<a href="/Default/Index"><i class="ft-power"></i><span class="menu-title" data-i18n="">Siteye Git</span></a>
+					<a href="/Member/Comment/Index"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">@localizer["Yorumlarım"]</span></a>
 				</li>
 				<li class=" nav-item">
-					<a href="/Login/LogOut"><i class="ft-lock"></i><span class="menu-title" data-i18n="">Çıkış Yap</span></a>
+					<a href="/Default/Index"><i class="ft-layout"></i><span class="menu-title" data-i18n="">@localizer["Siteye Git"]</span></a>
+				</li>
+				<li class=" nav-item">
+					<a href="/Login/LogOut"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">@localizer["Çıkış Yap"]</span></a>
 				</li>
 			</ul>
 		</div>

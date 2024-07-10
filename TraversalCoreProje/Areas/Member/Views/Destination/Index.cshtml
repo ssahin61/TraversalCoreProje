@@ -2,8 +2,8 @@
 @model List<Destination>
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_MemberLayout.cshtml";
 }
 
 
@@ -24,9 +24,22 @@
 			</div>
 			<div class="card-content collapse show">
 				<div class="card-body">
-					<p class="card-text">Alanında uzman rehberlerimiz eşliğinde Balkanlardan Orta Asya'ya,
+					<p class="card-text">
+						Alanında uzman rehberlerimiz eşliğinde Balkanlardan Orta Asya'ya,
 						Doğu Avrupa'dan Anadolu'nun dört bir yanına en uygun fiyatlarla sunduğumuz
-						tur listemize ve tur detaylarına aşağıdaki tablodan erişebilirsiniz.</p>
+						tur listemize ve tur detaylarına aşağıdaki tablodan erişebilirsiniz.
+					</p>
+
+					<form asp-action="GetCitiesSearchByName" method="get" asp-area="Member">
+						<div>
+							<p>
+								<b>Lütfen aranacak şehri giriniz:</b> <input type="text" name="searchString" class="form-control" value="@ViewData["CurrentFilter"]" />
+								<br />
+								<input type="submit" value="Şehir Ara" class="btn btn-outline-dark" />
+							</p>
+						</div>
+					</form>
+
 					<div class="table-responsive">
 						<table class="table">
 							<thead>
