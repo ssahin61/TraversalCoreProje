@@ -19,16 +19,16 @@ namespace TraversalCoreProje.Areas.Member.Controllers
 			return View(values);
 		}
 
-		//public IActionResult GetCitiesSearchByName(string searchString)
-		//{
-		//	ViewData["CurrentFilter"] = searchString;
-		//	var values = from x in destinationManager.TGetList() select x;
+		public IActionResult GetCitiesSearchByName(string searchString)
+		{
+			ViewData["CurrentFilter"] = searchString;
+			var values = from x in destinationManager.TGetList() select x;
 
-		//	if (!string.IsNullOrEmpty(searchString))
-		//	{
-		//		values = values.Where(y => y.City.ToLower().Contains(searchString.ToLower()));
-		//	}
-		//	return View(values.ToList());
-		//}
+			if (!string.IsNullOrEmpty(searchString))
+			{
+				values = values.Where(y => y.City.ToLower().Contains(searchString.ToLower()));
+			}
+			return View(values.ToList());
+		}
 	}
 }

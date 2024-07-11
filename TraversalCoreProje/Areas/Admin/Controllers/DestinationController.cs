@@ -3,10 +3,12 @@ using BussinesLayer.Concrete;
 using DataAccesLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace TraversalCoreProje.Areas.Admin.Controllers
 {
 	[Area("Admin")]
+	[Route("Admin/[controller]/[action]")]
 	public class DestinationController : Controller
 	{
 		private readonly IDestinationService _destinationService;
@@ -54,6 +56,18 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
 		{
 			_destinationService.TUpdate(destination);
 			return RedirectToAction("Index");
+		}
+
+		public IActionResult GetCitiesSearchByName(string searchString)
+		{
+			ViewData["CurrentFilter"] = searchString;
+			var values = from x in _destinationService.TGetList() select x;
+
+			if (!string.IsNullOrEmpty(searchString))
+			{
+				values = values.Where(y => y.City.ToLower().Contains(searchString.ToLower()));
+			}
+			return View(values.ToList());
 		}
 
 	}

@@ -42,15 +42,6 @@ namespace TraversalCoreProje
 
 			services.AddControllersWithViews().AddFluentValidation();
 
-			//services.AddIdentity<AppUser, AppRole>(p =>
-			//{
-			//	p.Password.RequiredLength = 6;
-			//	p.Password.RequireNonAlphanumeric = false;
-			//	p.Password.RequireLowercase = false;
-			//	p.Password.RequireUppercase = false;
-			//	p.Password.RequireDigit = true;
-			//}).AddEntityFrameworkStores<Context>();
-
 			services.AddMvc(config =>
 			{
 				var policy = new AuthorizationPolicyBuilder()
